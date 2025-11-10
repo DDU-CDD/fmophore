@@ -1,15 +1,13 @@
 # fmophore
 Hotspot prediction and classification
 
-# FMOPhore V.0.1 Hotspot prediction and classification
+# FMOPhore - Hotspot prediction and classification
 
 ---
 
 # <img width="900" alt="image" align="center" src="https://github.com/user-attachments/assets/4a3fbc8c-fd40-4b96-a621-dd14d669c0a3">
 
 ---
-
-# FMOPhore v0.1 - Hotspot Prediction and Classification
 
 FMOPhore is a Python package designed for hotspot identification and classification. It facilitates the preparation and processing of protein and ligand structures, as well as advanced quantum mechanics (QM) calculations. The tool supports various features, including binding energy calculations, and analysis MD trajectory processing.
 
