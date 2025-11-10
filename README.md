@@ -66,8 +66,8 @@ To ensure all dependencies are correctly installed and avoid conflicts (Except: 
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/PeterEGFIbrahim/FMOPhore.git
-
+   git clone [(https://github.com/DDU-CDD/fmophore)]
+   
 2. Navigate to the directory:
    ```bash
    cd FMOPhore
