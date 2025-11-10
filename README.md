@@ -1,4 +1,4 @@
-# FMOPhore V.0.1 Hotspot prediction and classification
+# FMOPhore Hotspot prediction and classification
 
 ---
 
@@ -6,7 +6,7 @@
 
 ---
 
-# FMOPhore v0.1 - Hotspot Prediction and Classification
+# FMOPhore - Hotspot Prediction and Classification
 
 FMOPhore is a Python package designed for hotspot identification and classification. It facilitates the preparation and processing of protein and ligand structures, as well as advanced quantum mechanics (QM) calculations. The tool supports various features, including binding energy calculations, and analysis MD trajectory processing.
 
@@ -34,8 +34,6 @@ FMOPhore is a Python package designed for hotspot identification and classificat
 - **Hotspot Identification and Classification**: Identify and classify hotspots using advanced QM methods.
 - **PDB Preparation**: Process and prepare PDB files for calculations.
 - **QM Calculations**: Run MP2 or DFTB calculations using GAMESS software.
-- **Binding Energy Calculations**: Calculate the binding energy (ΔE) for protein-ligand complexes.
-- **Trajectory Support**: Perform MD using SuMD and ACEMD, for compatibility with FMOPhore analysis.
 - **Analysis Tools**: Perform post-calculation analysis.
 
 ---
@@ -63,7 +61,7 @@ To ensure all dependencies are correctly installed and avoid conflicts (Except: 
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/PeterEGFIbrahim/FMOPhore.git
+   git clone https://github.com/DDU-CDD/fmophore.git
 
 2. Navigate to the directory:
    ```bash
@@ -135,5 +133,5 @@ The following Python libraries are required (automatically installed with the pa
 ### Developer Information
 
 Author: Peter E.G.F. Ibrahim  
-Email: 2448959@dundee.ac.uk, peteregfi@gmail.com  
+Email: pibrahim001@dundee.ac.uk | 2448959@dundee.ac.uk | peteregfi@gmail.com
 GitHub: [PeterEGFIbrahim](https://github.com/PeterEGFIbrahim)  
