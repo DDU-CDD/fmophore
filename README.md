@@ -1,13 +1,12 @@
-# fmophore
-Hotspot prediction and classification
-
-# FMOPhore - Hotspot prediction and classification
+# FMOPhore V.0.1 Hotspot prediction and classification
 
 ---
 
 # <img width="900" alt="image" align="center" src="https://github.com/user-attachments/assets/4a3fbc8c-fd40-4b96-a621-dd14d669c0a3">
 
 ---
+
+# FMOPhore v0.1 - Hotspot Prediction and Classification
 
 FMOPhore is a Python package designed for hotspot identification and classification. It facilitates the preparation and processing of protein and ligand structures, as well as advanced quantum mechanics (QM) calculations. The tool supports various features, including binding energy calculations, and analysis MD trajectory processing.
 
@@ -22,15 +21,12 @@ FMOPhore is a Python package designed for hotspot identification and classificat
   - [Download GAMESS](https://www.msg.chem.iastate.edu/gamess/download.html).  
   - A GPU cluster with at least 2 GPUs and 20 CPUs is recommended for QM calculations.  
   - Contact the author for additional guidance on running FMOPhore with GAMESS.
-  - Please install GAMESS software: 
-        If you have it installed and running:
-        Recommended a GPU cluster equipped with at least 2 GPUs and 20 CPU.
-        Contact the author Peter E.G.F. Ibrahim: pibrahim001@dundee.ac.uk - 2448959@dundee.ac.uk, for further details on running FMOPhore to its full potential.
-    
+
 - **SuMD and ACEMD**  
   Required for Dy-FMOPhore analysis.  
   - [SuMD](https://github.com/molecularmodelingsection/SuMD)  
   - [ACEMD](https://software.acellera.com/acemd/tutorial.html)
+
 ---
 
 ## Features
@@ -43,6 +39,14 @@ FMOPhore is a Python package designed for hotspot identification and classificat
 - **Analysis Tools**: Perform post-calculation analysis.
 
 ---
+
+## Installation
+
+### Prerequisites
+
+- Python >= 3.6
+- GAMESS software (for QM calculations).
+
 ### Set up Conda Environment
 
 To ensure all dependencies are correctly installed and avoid conflicts (Except: GAMESS, SuMD and ACEMD, mentioned above), follow these steps:
@@ -54,20 +58,13 @@ To ensure all dependencies are correctly installed and avoid conflicts (Except: 
    conda env create -f FMOPhore_env.yml
    conda activate FMOPhore_env
    ```
-   
-## Installation
-
-### Prerequisites
-
-- Python >= 3.10
-- GAMESS software (for QM calculations).
 
 ### Steps
 
 1. Clone the repository:
    ```bash
-   git clone [(https://github.com/DDU-CDD/fmophore)]
-   
+   git clone https://github.com/PeterEGFIbrahim/FMOPhore.git
+
 2. Navigate to the directory:
    ```bash
    cd FMOPhore
@@ -75,37 +72,33 @@ To ensure all dependencies are correctly installed and avoid conflicts (Except: 
 4. Install the package:
    ```bash
    pip install .
-   
+
 ## Usage
 
 ### Mandatory Parameters:
    ```bash
-    -dir,       --directory             : Process all PDB files in a directory
-    -com,       --Prot_complex          : Process a single complex PDB file .pdb
-    -pdb,       --PDB_ID                : PDB ID or .txt file containing PDB IDs.
-                                          Process a single complex PDB directly from Protein Data Bank > https://www.rcsb.org/ 
-    -prot       --protein_pdb_file      : Path to protein PDB file
-    -ligs       --ligand_files          : Path to single ligand PDB file or directory of ligand PDB files
-
-    -qm         --qm_calculation        : MP2 or DFTB (GAMESS software required/ https://www.msg.chem.iastate.edu/gamess/download.html)
-    
-    -d          --distance_cutoff       : Distance cutoff for selecting residues. Use "no_cutoff" to select the whole protein.
-    
-    -t          --timer                 : Timer in days e.g.: 1 day ==> -t 1  
-    -c          --cpus                  : Please specify the number of cpus (cores; number of jobs to parallelize)
+-dir,       --directory             : Process all PDB files in a directory.  
+-com,       --Prot_complex          : Process a single complex PDB file.  
+-PDB,       --PDB_ID                : Specify a PDB ID or a file containing multiple PDB IDs.  
+-prot,      --protein_pdb_file      : Path to the protein PDB file.  
+-ligs,      --ligand_files          : Path to a single ligand PDB file or a directory of ligand PDB files.  
+-d          --distance_cutoff        : Distance cutoff for selecting residues (or "no_cutoff" for the whole protein).  
+-qm         --qm_calculation         : Specify "MP2" or "DFTB" (requires GAMESS software).  
+-t,         --timer                 : Timer in days (e.g., `-t 1` for 1 day).  
+-c,         --cpus                  : Number of CPUs to use for parallelization.  
    ```
 ### Optional Parameters:
    ```bash
-    -cof,       --cofactor              : If you have co-factor in the system, provide the name in this form, e.g.: LYS-600'
-    -lib,       --same_target           : If same target and different ligands
-    -align,     --align                 : If needed to align structures
-    -analysis   --FMOPhore_analysis     : To run analysis only if calculations has been completed.
+-cof,       --cofactor              : Specify co-factor (e.g., `LYS-600`).  
+-lib,       --same_target           : Specify if analyzing the same target with different ligands.  
+-align,     --align                 : Align structures if needed.  
+-analysis,  --FMOPhore_analysis     : Perform analysis of completed calculations.
    ```
 
 
 ### Example Command
    ```
-fmophore -dir /path/to/pdb/files -d 5 -qm DFTB -t 1 -c 10 -lib
+fmophore -dir /path/to/pdb/files -d 5 -qm DFTB -t 1 -c 20 -PDBProcessor -FMOPhore -lib -align
    ```
 ### Help
 To view the full list of options and their usage:
@@ -134,23 +127,13 @@ After running FMOPhore, you can expect the following outputs:
 
 The following Python libraries are required (automatically installed with the package):
 
-- "numpy",
-- "tqdm",
-- "timeout-decorator",
-- "argparse",
-- "pandas",           
-- "seaborn",
-- "matplotlib",
-- "rdkit"
-  
+- `numpy`
+- `tqdm`
+- `timeout-decorator`
+- `argparse`
+
 ### Developer Information
 
 Author: Peter E.G.F. Ibrahim  
-Email: pibrahim001@dundee.ac.uk, 2448959@dundee.ac.uk 
-
-### Licensing
-- This project is licensed under the GPL-3.0 License.
-- See the LICENSE file for details.
-    
-### Copyright
-© 2024 Peter E.G.F. Ibrahim. All rights reserved.
+Email: 2448959@dundee.ac.uk, peteregfi@gmail.com  
+GitHub: [PeterEGFIbrahim](https://github.com/PeterEGFIbrahim)  
